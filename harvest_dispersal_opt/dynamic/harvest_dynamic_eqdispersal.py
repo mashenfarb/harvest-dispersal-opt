@@ -3,8 +3,6 @@ Note: In harvest steadystate, the two dispersal control control variables are se
       In harvest dynamic, the two dispersal control control variables are collapsed into one, equal term.
 '''
 
-import sys
-
 import numpy as np
 import sympy as sym
 from scipy.optimize import fsolve
@@ -19,9 +17,8 @@ from harvest_dispersal_opt.steady_state.steadystate_eqdispersal import (
 )
 
 
-## Note: Parameters must be global variables for obj and obj_grad
 ## Economic Parameters
-dis = 0.05  # Discount factor
+dis = 0.05  # Discount rate
 p1 = 1      # price
 C11 = .6    # cost coefficient
 C12 = .25   # patch 2 is HIGH cost patch, patch 1 low cost
@@ -42,6 +39,7 @@ num_nodes = 500   # Num collocation nodes during run
 time = np.linspace(0, duration, num_nodes)
 interval_val = duration/(num_nodes - 1)  # interval between collocation nodes
 dis_factor = get_discount_factor(dis, time)
+
 
 def main() -> None:
     ## Steady State Open Access and Optimal
