@@ -13,7 +13,7 @@ from harvest_dispersal_opt.steady_state.steadystate_ndc import (
 
 ## Economic Parameters
 dis = 0.05  # discount factor #set to 0 to turn off discounting
-P = 1      # price
+P = 1       # price
 c2 = .1     # harvest control cost coefficient on second term
 umax = 2    # maximum dispersal control
 C11 = 0.6   # patch 1 cost coefficient (previously 0.8)(?)
